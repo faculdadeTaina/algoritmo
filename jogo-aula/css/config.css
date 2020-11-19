@@ -1,0 +1,14 @@
+#identificacao {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #fff;
+    padding: 10px;
+    outline: rgb(99, 206, 28) 3px solid;
+    }
+    #canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+    display: block;
+    }
+    

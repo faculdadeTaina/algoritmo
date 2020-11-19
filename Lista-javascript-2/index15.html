@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ex15.js"></script>
+    <title>Paginá 15</title>
+</head>
+<body>
+        <h1>Validação de campos</h1>
+<form class="card" action="">
+<label for="">Nome:</label>
+<input type="text" id="inputNome" required minlength="3">
+<br>
+<label for="">Idade:</label>
+<input type="number" id="inputNumber" required max="150">
+<br>
+<label for="">Salario:</label>
+<input type="number" id="inputSalario" required min="1200">
+<br>
+<label for="">Estado civil:</label>
+<input type="text" id="Estado"  required="s">
+<br>
+<select id="genre"  required="value">
+    <option selected="">Sexo</option>
+    <option value="M">Masculino</option>
+    <option value="F">Feminino</option>
+</select>
+<br>
+<br>
+<button>Enviar</button>
+</form>
+</body>
+</html>
