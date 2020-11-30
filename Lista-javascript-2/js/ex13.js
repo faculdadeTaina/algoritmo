@@ -6,7 +6,7 @@ for(let i=0;  i<quatidadeP; i++){
       total+=idade;
   
 }
-document.write("O total de pessoas=" +total+ "<br/>")
+document.write("O total de pessoas=" +quatidadeP+ "<br/>")
 
 if(total >= 60){
     document.write("Idoso")
