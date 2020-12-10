@@ -10,12 +10,12 @@ window.onload = function() {
     var velocidadeX = velocidadeY = 0;
     var cabecaX = 10;
     var cabecaY = 15;
-    var tamanhoQuadro = 20;
-    var quantQuadros = 20;
+    var tamanhoQuadro = 25;
+    var quantQuadros = 25;
     var comidaX = comidaY = 15;
     var rastro = [ ];
-    var cauda = 5;
-    
+    var cauda = 2;
+    var tempo;
     function jogo() {
 
         cabecaX += velocidadeX;
@@ -42,7 +42,7 @@ window.onload = function() {
     contexto.fillRect(
     comidaX*tamanhoQuadro, comidaY*tamanhoQuadro,
     tamanhoQuadro, tamanhoQuadro);
-    contexto.fillStyle = "gray";
+    contexto.fillStyle = "blue";
     for(var i = 0; i < rastro.length; i++) {
     contexto.fillRect(
     rastro[i].x*tamanhoQuadro,
@@ -51,7 +51,7 @@ window.onload = function() {
     
     if(rastro[i].x == cabecaX && rastro[i].y == cabecaY) {
     velocidadeX = velocidadeY = 0;
-    cauda=5;
+    cauda=2;
     }
 };
 rastro.push({x : cabecaX, y : cabecaY});
@@ -85,6 +85,20 @@ comidaY = Math.floor(Math.random()*tamanhoQuadro);
         break;
         }       
         };
+    
+      /*  function animaSprit(){
+            var posicao=265;
+            const intervalo=100
+            tempo=setInterval(()=>{
+                document.getElementById("img").style.backgroundPosition=`${posicao}px 0px`
+           if(posicao <1536){
+               posicao=+256;}//increments
+           }else {posicao=256;}
+        }
+
+            , intervalo)
+        }
+    }*/
     
     setInterval(jogo, 1000/10);
 };
