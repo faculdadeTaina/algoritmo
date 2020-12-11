@@ -1,8 +1,15 @@
+//renderizando/capiturar html
 const cardBoard = document.querySelector("#cardboard");
 const placar = document.querySelector('#pontos');
 const erros = document.querySelector('#erro');
 let pontos = 0;
 let errro =0;
+//audio de iniciar
+const button = document.querySelector('button')
+button.addEventListener('click' , function(){
+  audio.inicar()
+})
+//array para armazenar imagens
 const imgs = [
   "img1.jpg",
   "img2.jpg",
@@ -11,7 +18,7 @@ const imgs = [
   "img5.jpg",
   "img6.jpg"
 ];
-
+//função para sortear 
 function generateRan() {
   var max = 6;
   var random = [];
@@ -28,47 +35,57 @@ return random
 
 const valores1 = generateRan();
 const valores2 = generateRan();
-
+//criar hmtl com imagnes
 let cardHTML1 = "";
 let cardHTML2 = "";
 
 for (var i = 0; i < 6; i++) {
+  //concatenar o html e renderizar as classes
+  //a cada ineteração ele busca uma imagem no array
 cardHTML1 += `<div class="memory-card" data-card="${imgs[valores1[i]]}">
 <img class="front-face" src="img/${imgs[valores1[i]]}"/>
 <img class="back-face" src="img/lava.jpg">
 </div>`
+
 cardHTML2 += `<div class="memory-card" data-card="${imgs[valores2[i]]}">
 <img class="front-face" src="img/${imgs[valores2[i]]}"/>
 <img class="back-face" src="img/shark.jpg">
 </div>`
 }
+//somar/receber o html/cardhtml
 cardBoard.innerHTML = cardHTML1 + cardHTML2;
 
-/** Fim da Renderização HTML */
+// Fim da Renderização HTML //
 
 const cards = document.querySelectorAll(".memory-card");
+//pegar todos os memories card
+//para alterar as imagens
 let firstCard, secondCard;
-let lockCards = false;
-
+let lockCards = false; //trancar as cartas e so abrir duas
+//funçao para receber um card novo/troca de posição
 function flipCard() {
+  
   if (lockCards) return false;
+  //pegar a lista flip
   this.classList.add("flip");
-
+//texte
   if (!firstCard) {
     firstCard = this;
     return false;
   }
-
+//teste 2
   secondCard = this;
 
   checkForMatch();
 }
-
+//checar se corresponde card do primeiro é o card igual do segundo
 function checkForMatch() {
+  //verificar se o card do primeiro é igaul ao card do segundo
   let isMatch = firstCard.dataset.card === secondCard.dataset.card;
 
   !isMatch ? unFlipCards() : pontuarCartas();
 }
+//funcão para pontuar
 function pontuarCartas(){
     pontos++;
     placar.innerText = 'PONTUAÇÃO: '+pontos;
@@ -88,7 +105,7 @@ function pontuarCartas(){
       },2000)
     }
   }
-  
+  //funcção para remover flip
   function unFlipCards() {
     lockCards = true;
     errro++
@@ -100,7 +117,7 @@ function pontuarCartas(){
       resetCards();
     }, 1000);
   }
-  
+  //resetar as cards
   function resetCards(isMatch = false) {
     if (isMatch) {
       firstCard.removeEventListener("click", flipCard);
