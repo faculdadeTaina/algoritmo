@@ -5,10 +5,7 @@ const erros = document.querySelector('#erro');
 let pontos = 0;
 let errro =0;
 //audio de iniciar
-const button = document.querySelector('button')
-button.addEventListener('click' , function(){
-  audio.inicar()
-})
+
 //array para armazenar imagens
 const imgs = [
   "img1.jpg",

@@ -59,7 +59,8 @@
     color: darkcYan;
   }
   #erro{
-    font-size: 20px;
+    font-size: 25px;
+    padding: 40PX;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: red;
   }
@@ -90,14 +91,10 @@ background-repeat: no-repeat;
     color:black;
 
   }
-  #Start{
-    
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:darkcyan;
+  #Start{  
+    font-size: 20px;   
     border: none;
     border-radius: 10px;
-    color:black;
     width: 280px;
     height: 50px;
   }
