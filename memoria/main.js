@@ -49,10 +49,10 @@ cardHTML2 += `<div class="memory-card" data-card="${imgs[valores2[i]]}">
 <img class="back-face" src="img/shark.jpg">
 </div>`
 }
-//somar/receber o html/cardhtml
+//somar/repetir o html/cardhtml
 cardBoard.innerHTML = cardHTML1 + cardHTML2;
 
-// Fim da Renderização HTML //
+// fim da Renderização HTML //
 
 const cards = document.querySelectorAll(".memory-card");
 //pegar todos os memories card
@@ -90,11 +90,11 @@ function pontuarCartas(){
     if(pontos==6){
       setTimeout(()=>{
         if(pontos>errro){
-          placar.innerText ="VOCÊ GANHOU!!"
+          placar.innerText ="VOCÊ GANHOU!! "
           placar.style.color = 'blue'
         }else if(pontos == errro){
           placar.style.color = 'darkcyan'
-          placar.innerText = "EMPATE!"
+          placar.innerText = "EMPATE! "
         }else if(pontos<errro){
           placar.innerText = "VOCÊ PERDEU!!"
           placar.style.color = 'red'
